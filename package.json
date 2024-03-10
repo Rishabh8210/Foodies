@@ -1,0 +1,19 @@
+{
+  "name": "foodies",
+  "version": "1.0.0",
+  "description": "This is a Restaurant WebApp",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rishabh8210/Foodies.git"
+  },
+  "author": "Rishabh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rishabh8210/Foodies/issues"
+  },
+  "homepage": "https://github.com/Rishabh8210/Foodies#readme"
+}
