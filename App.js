@@ -1,10 +1,13 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import Header from "./src/Components/Header"
 
-const Hello = () => {
-    return <h1>Hello Guy's</h1>
+const AppLayout = () => {
+    return (
+        <Header />
+    )
 }
 const main = document.querySelector(".main");
 const root = ReactDOM.createRoot(main);
 
-root.render(<Hello />)
+root.render(<AppLayout />)
