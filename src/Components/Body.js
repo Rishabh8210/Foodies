@@ -2,10 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { useState, useEffect } from "react"
 import {Swiggy_Data_API} from "../../Constant.js"
-import Cusines from "./Cusines.js"
+import CusiniesBanner from "./CusiniesBanner.js"
 import TopRestaurant from "./TopRestaurant"
 import RestaurantList from "./RestaurantList.js"
-import RestaurantCard from "./RestaurnatCard.js"
+import ShimerCusiniesBanner from "./ShimerCusiniesBanner.js"
 
 const Body = () => {
     const [restaurantData, setRestaurantData] = useState([])
@@ -27,9 +27,15 @@ const Body = () => {
     }
     return(
         <div className="main-body">
-            <Cusines banner = {bannerData}/>
-            <TopRestaurant topRestaurant = {topRestaurantData}/>
-            <RestaurantList restaurant = {restaurantData} />
+            {
+                (bannerData.length != 0) ? <CusiniesBanner banner = {bannerData}/> : <ShimerCusiniesBanner/>
+            }
+            {
+                <TopRestaurant topRestaurant = {topRestaurantData}/>
+            }
+            {
+                <RestaurantList restaurant = {restaurantData} />
+            }
         </div>
     )
 }

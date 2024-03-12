@@ -71,7 +71,6 @@ body {
     object-fit: cover;
     scroll-behavior: smooth;
     border-bottom: 1px solid gainsboro;
-
 }
 
 .cusines-list::-webkit-scrollbar {
@@ -203,3 +202,31 @@ body {
     flex-wrap: wrap;
 }
 
+/* Shimer */
+.shimer-cusines{
+}
+.shimer-cusines-heading{
+    background-color: rgba(220, 220, 220, 0.598);
+    
+}
+.shimer-cusines-list{
+    
+}
+@keyframes leftToRight {
+    0%{
+        background-color: rgba(220, 220, 220, 0.456);
+    }
+    50%{
+        background-color: rgba(220, 220, 220, 0.91);
+    }
+    100%{
+        background-color: rgba(220, 220, 220, 0.638);
+
+    }
+}
+.shimer-cusinies-card{
+    /* background-color: rgba(220, 220, 220, 0.598); */
+    height: 90%;
+    width: 100%;
+    animation: leftToRight .6s infinite linear forwards;
+}

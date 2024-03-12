@@ -3,3 +3,8 @@ export const TopRestaurantURL = "https://media-assets.swiggy.com/swiggy/image/up
 
 // Swiggi Api
 export const Swiggy_Data_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
+// Shimer Dummy Data
+const ShimerLength = 5;
+export const shimerDummyData = new Array(ShimerLength)
+shimerDummyData.fill({})

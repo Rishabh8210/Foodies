@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import BannerCard from "./BannerCard"
-const Cusines = ({banner}) => {
+import CusiniesCard from "./CusiniesCard"
+const CusiniesBanner = ({banner}) => {
     return (
         <div className="cusines">
             <div className="corner-blur"></div>
@@ -11,11 +11,11 @@ const Cusines = ({banner}) => {
             <div className="cusines-list">
                 {
                     banner.map((cusinies)=>{
-                        return <BannerCard key = {cusinies.id}{...cusinies} />
+                        return <CusiniesCard key = {cusinies.id}{...cusinies} />
                     })
                 }
             </div>
         </div>
     )
 }
-export default Cusines;
+export default CusiniesBanner;
