@@ -13,7 +13,7 @@ const AppLayout = () => {
         </>
     )
 }
-const main = document.querySelector(".main");
-const root = ReactDOM.createRoot(main);
+
+const root = ReactDOM.createRoot(document.querySelector(".root"));
 
 root.render(<AppLayout />)

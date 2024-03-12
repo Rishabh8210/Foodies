@@ -26,11 +26,11 @@ const Body = () => {
         setBannerData(restaurantDataList?.data?.cards[0]?.card?.card?.imageGridCards?.info)
     }
     return(
-        <>
+        <div className="main-body">
             <Cusines banner = {bannerData}/>
             <TopRestaurant topRestaurant = {topRestaurantData}/>
             <RestaurantList restaurant = {restaurantData} />
-        </>
+        </div>
     )
 }
 export default Body;

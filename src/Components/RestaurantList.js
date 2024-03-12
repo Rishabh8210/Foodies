@@ -4,8 +4,8 @@ import RestaurantCard from "./RestaurnatCard";
 
 const RestaurantList = ({restaurant}) => {
     return (
-        <div className="top-restaurant">
-            <div className="top-restaurant-heading">
+        <div className="all-restaurant">
+            <div className="restaurant-heading">
                 <h1>Restaurant with online food delivery in Chennai</h1>
             </div>
             <div className="restaurant-list">
