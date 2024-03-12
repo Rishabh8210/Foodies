@@ -1,17 +1,13 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import Header from "./src/Components/Header.js"
-import Cusines from "./src/Components/Cusines.js"
-import TopRestaurant from "./src/Components/TopRestaurant.js"
-import RestaurantList from "./src/Components/RestaurantList.js"
+import Body from "./src/Components/Body.js"
 
 const AppLayout = () => {
     return (
         <>
             <Header />
-            <Cusines />
-            <TopRestaurant />
-            <RestaurantList />
+            <Body />
         </>
     )
 }

@@ -2,19 +2,24 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import {TopRestaurantURL} from "../../Constant.js"
 
-const RestaurantCard = () => {
+const RestaurantCard = ({name, cloudinaryImageId, avgRating, sla, aggregatedDiscountInfoV3, cuisines, areaName}) => {
     return (
         <div className="restaurant-card">
             <div className="restaurant-image">
-                <img src = {TopRestaurantURL + "uokfd61wpfknjqjfqzrk"} alt = "image" />
-                <div className="restaurant-offers">
-                    <h3>Rs 125 off ABOVE Rs 199</h3>
-                </div>
+                <img src = {TopRestaurantURL + cloudinaryImageId} alt = "image" />
+                {
+                    (aggregatedDiscountInfoV3 != undefined &&
+                        <div className="restaurant-offers">
+                            <h3>{aggregatedDiscountInfoV3?.header + " " + aggregatedDiscountInfoV3?.subHeader}</h3>
+                        </div>
+                    )
+                }
             </div>
             <div className="restaurant-desc">
-                <h2>Dominos Pizza</h2>
-                <h2>4.2 . 32 mins</h2>
-                <p>Burger, Pizza, Italian...</p>
+                <h2>{name}</h2>
+                <h2>{avgRating} . {(sla != undefined && sla.slaString)}</h2>
+                <p>{(cuisines != undefined && cuisines.join(", "))}</p>
+                <p>{areaName}</p>
             </div>
         </div>
     )
