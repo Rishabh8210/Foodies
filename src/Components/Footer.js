@@ -2,7 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 const Footer = () => {
     return (
-        <h1>I am a Foooter</h1>
+        <div className="footer">
+            <h4>@ All Rights Reserved | Rishabh</h4>
+        </div>
     )
 }
 export default Footer;
