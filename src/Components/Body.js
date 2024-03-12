@@ -6,6 +6,7 @@ import CusiniesBanner from "./CusiniesBanner.js"
 import TopRestaurant from "./TopRestaurant"
 import RestaurantList from "./RestaurantList.js"
 import ShimerCusiniesBanner from "./ShimerCusiniesBanner.js"
+import ShimerRestaurantList from "./ShimerRestaurantList.js"
 
 const Body = () => {
     const [restaurantData, setRestaurantData] = useState([])
@@ -31,10 +32,10 @@ const Body = () => {
                 (bannerData.length != 0) ? <CusiniesBanner banner = {bannerData}/> : <ShimerCusiniesBanner/>
             }
             {
-                <TopRestaurant topRestaurant = {topRestaurantData}/>
+                (topRestaurantData.length != 0) ? <TopRestaurant topRestaurant = {topRestaurantData} /> : <ShimerRestaurantList/>
             }
             {
-                <RestaurantList restaurant = {restaurantData} />
+                (restaurantData.length != 0) ? <RestaurantList restaurant = {restaurantData} /> : <ShimerRestaurantList/>
             }
         </div>
     )
