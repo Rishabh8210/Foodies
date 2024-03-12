@@ -97,7 +97,6 @@ html, body{
     overflow-y: hidden;
     padding: 0vw 1vw;
     gap: 2vw;
-    
 }
 .top-restaurant-list::-webkit-scrollbar{
     display: none;

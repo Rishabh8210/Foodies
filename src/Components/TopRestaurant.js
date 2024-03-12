@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import RestaurantCard from "./RestaurnatCard";
+import TopRestaurantCard from "./TopRestaurantCard";
 
-const TopRestaurant = ({topRestaurants}) => {
+const TopRestaurant = ({topRestaurant}) => {
     return (
         <div className="top-restaurant">
             <div className="top-restaurant-heading">
@@ -10,8 +10,8 @@ const TopRestaurant = ({topRestaurants}) => {
             </div>
             <div className="top-restaurant-list">
                 {
-                    topRestaurants.map((topRestaurant)=>{
-                        return <RestaurantCard key={topRestaurant.info.id} {...topRestaurant.info} />
+                    topRestaurant.map((topRes)=>{
+                        return <TopRestaurantCard key={topRes.info.id} {...topRes.info} />
                     })
                 }
             </div>
