@@ -18,13 +18,18 @@ const Body = () => {
     }, [])
     async function getRestaurant(){
         
-        // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-        const data = await fetch(Swiggy_Data_API);
-        const restaurantDataList = await data.json();
-        setRestaurantData(restaurantDataList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setTopRestaurantData(restaurantDataList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        console.log(restaurantDataList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setBannerData(restaurantDataList?.data?.cards[0]?.card?.card?.imageGridCards?.info)
+        try{
+            // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+            const data = await fetch(Swiggy_Data_API);
+            const restaurantDataList = await data.json();
+            setRestaurantData(restaurantDataList?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+            setTopRestaurantData(restaurantDataList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+            // console.log(restaurantDataList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+            setBannerData(restaurantDataList?.data?.cards[0]?.card?.card?.imageGridCards?.info)
+        }catch(error)
+        {
+            console.log("Some error found !");
+        }
     }
     return(
         <div className="main-body">
