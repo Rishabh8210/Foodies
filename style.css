@@ -275,7 +275,8 @@ a{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
-    /* h1 */
     /* img-error-status-img */
+}
+.error-status > h1{
+    font-size: 4vw;
 }

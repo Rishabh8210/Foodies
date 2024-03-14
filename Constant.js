@@ -6,6 +6,8 @@ export const Swiggy_Data_API = "https://www.swiggy.com/dapi/restaurants/list/v5?
 
 export const Swiggy_Restaurant_Menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.0826802&lng=80.2707184&restaurantId=";
 
+export const Swiggy_Cusinies_Banner = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&collection=80441&tags=layout_CCS_Idli";
+
 // Shimer Dummy Data
 const ShimerLength = 5;
 export const shimerDummyData = new Array(ShimerLength)
