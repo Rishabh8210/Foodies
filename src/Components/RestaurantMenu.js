@@ -5,31 +5,79 @@ import {useParams} from 'react-router-dom'
 import { Swiggy_Restaurant_Menu_API } from "../../Constant.js"
 import ShimerRestaurantList from "./ShimerRestaurantList"
 import ErrorPage from "./ErrorPage.js"
+import FoodOffers from "./FoodOffers.js"
 const RestaurantMenu = () => {
     const [restaurantMenu, setRestaurantMenu] = useState(null)
+    const [restaurantInfo, setRestaurantInfo] = useState(null)
+    const [restaurantOffers, setRestaurantOffers] = useState([])
+    const [restaurantFood, setRestaurantFood] = useState([])
     const {id} = useParams();
     useEffect(() => {
         getRestaurantMenu();
     }, [])
-
+        console.log("render")
     async function getRestaurantMenu() {
         try{
             const menuData = await fetch(Swiggy_Restaurant_Menu_API+id);
             const parseMenuData = await menuData.json();
             setRestaurantMenu(parseMenuData);
+            console.log(parseMenuData, parseMenuData?.data)
+            for(let i = 0;i < 6; i++)
+            {
+                if(id == parseMenuData?.data?.cards[i]?.card?.card?.info?.id)
+                {
+                    setRestaurantInfo(parseMenuData?.data?.cards[i]?.card?.card?.info);
+                    // break;
+                }
+                else if(parseMenuData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.offers)
+                {
+                    setRestaurantOffers(parseMenuData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.offers);
+                    // break;
+                }
+                else if(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.length)
+                {
+                    setRestaurantFood(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+                    // break;
+                }
+                // console.log("Nii mila", parseMenuData?.data?.cards[i]?.card?.card?.info?.id)
+            }
         }catch(error){
-            console.log("Something went wrong !");
+            console.log("Something went wrong !", error);
         }
     }
 
-    if(!restaurantMenu)
-        return <ShimerRestaurantList />
+    // if(!restaurantMenu)
+    //     return <ShimerRestaurantList />
 
-    return (!restaurantMenu) ? <ErrorPage /> : (
-        <>
-            <h1>Restaurant Id :{id} </h1>
-            {console.log(restaurantMenu)}
-        </>
+    return (!restaurantMenu) ? <ShimerRestaurantList /> : (
+        <div className="restaurant-menu">
+            <div className="restaurant-details">
+                <div className="restaurant-info">
+                    <h4>{restaurantInfo?.name}</h4>
+                    <p>{restaurantInfo?.cuisines.join(", ")}</p>
+                    <p>{restaurantInfo?.areaName}</p>
+                    <p>{restaurantInfo?.feeDetails?.message}</p>
+                </div>
+                <div className="restaurant-ratinngs">
+                    <h3>{restaurantInfo?.avgRating}</h3>
+                    <p>{restaurantInfo?.totalRatingsString}</p>
+                </div>
+                    
+                {(console.log(restaurantInfo),console.log(restaurantOffers, "Offers"), console.log(restaurantFood, "Food"))}
+            </div>
+            <div className="restaurant-delivery-time">
+                <p>{restaurantInfo?.sla?.slaString} </p>
+                <p>--</p>
+                <p>{restaurantInfo?.costForTwoMessage}</p>
+            </div>
+            <div className="restaurant-food-offers">
+                {
+                    restaurantOffers.map((offer)=>{
+                        return <FoodOffers key = {offer?.info?.offerIds[0]} {...offer}/>
+                    })
+                }
+            </div>
+        </div>
     )
 }
 export default RestaurantMenu;

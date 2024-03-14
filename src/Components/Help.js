@@ -1,8 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
+import PageUnderconstruction from "./PageUnderconstruction";
 const Help = () => {
     return (
-        <h1>Help</h1>
+        <PageUnderconstruction />
     )
 }
 export default Help;

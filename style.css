@@ -8,7 +8,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 
 .header {
@@ -261,6 +261,7 @@ a{
 
 /* Error page */
 .error-main{
+    padding: 0vw 12vw;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -272,11 +273,126 @@ a{
     height: 65%;
     width: 60%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    /* img-error-status-img */
+    /* img-er   ror-status-img */
 }
 .error-status > h1{
     font-size: 4vw;
+}
+/* Authentication */
+.authentication{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.466);
+    flex-direction: row-reverse;
+}
+.authentication-sign-in{
+    height: 100%;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Page UnderCosnt */
+.page-underconst{
+    height: calc(100vh - 5vw);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Restaurant Menu */
+.restaurant-menu{
+    min-height: 50vh;
+    width: 100%;
+    padding: 0vw 12vw;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.restaurant-details{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    /* background-color: antiquewhite; */
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+    border-bottom: 1px dotted rgb(115, 115, 115);
+}
+.restaurant-info{
+    /* background-color: azure; */
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: .2vw;
+}
+.restaurant-info h4{
+    font-size: 2vw;
+}
+.restaurant-info p{
+    font-size: 1.1vw;
+    font-weight: 100;
+}
+.restaurant-ratinngs{
+    font-size: 1.2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.restaurant-delivery-time{
+    padding: 1.2vw 0vw;
+    height: 5vh;
+    width: 70%;
+    /* background-color: blue; */
+    display: flex;
+    
+    /* align-items: center; */
+    gap: 2.4vw;
+}
+.restaurant-delivery-time p{
+    font-size: 1.2vw;
+    font-weight: 900;
+}
+
+.restaurant-food-offers{
+    height: 11vw;
+    width: 70%;
+    display: flex;
+    gap: 2vw;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    /* background-color: aqua; */
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.restaurant-food-offers::-webkit-scrollbar{
+    display: none;
+}
+.restaurant-food-offers-list{
+    border-radius: 2vw;
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: .35vw;
+    width: 20vw;
+    padding: 1.5vw;
+    cursor: pointer;
+    border: 1px solid gray;
+    transition:all .3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.restaurant-food-offers-list:hover{
+    scale:0.96;
+}
+.restaurant-food-offers-list h3{
+    font-size: 1.6vw;
 }

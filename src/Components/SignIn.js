@@ -2,7 +2,11 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 const SignIn = () => {
     return (
-        <h1>Sign In</h1>
+        <div className = "authentication">
+            <div className="authentication-sign-in">
+
+            </div>
+        </div>
     )
 }
 export default SignIn;
