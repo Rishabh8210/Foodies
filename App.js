@@ -9,6 +9,8 @@ import Help from "./src/Components/Help.js"
 import Offers from "./src/Components/Offers.js"
 import SignIn from "./src/Components/SignIn.js"
 import Cart from "./src/Components/Cart.js"
+import RestaurantMenu from "./src/Components/RestaurantMenu.js"
+import ErrorPage from "./src/Components/ErrorPage.js"
 const AppLayout = () => {
     return (
         <>
@@ -23,6 +25,7 @@ const appRouter = {} = createBrowserRouter([
     {
         path : "/",
         element : <AppLayout />,
+        errorElement: <ErrorPage />,
         children : [
             {
                 path : "/",
@@ -47,6 +50,10 @@ const appRouter = {} = createBrowserRouter([
             {
                 path : "/cart",
                 element : <Cart />
+            },
+            {
+                path : "/restaurant/:id",
+                element : <RestaurantMenu />
             },
         ]
     }
