@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import TopRestaurantCard from "./TopRestaurantCard";
+import { Link } from "react-router-dom";
 
 const TopRestaurant = ({topRestaurant}) => {
     return (
@@ -11,7 +12,9 @@ const TopRestaurant = ({topRestaurant}) => {
             <div className="top-restaurant-list">
                 {
                     topRestaurant.map((topRes, index)=>{
-                        return <TopRestaurantCard key={topRes.info.id} {...topRes.info}/>
+                        return <Link to={"restaurant/"+topRes.info.id} key={topRes.info.id}>
+                            <TopRestaurantCard {...topRes.info}/>
+                        </Link>
                     })
                 }
             </div>

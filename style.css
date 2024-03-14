@@ -23,10 +23,11 @@ body {
     z-index: 9;
     top: 0;
     background-color: white;
+    overflow: hidden;
 }
 
 .header .logo {
-    height: 130%;
+    height: 7vw;
     cursor: pointer;
     /* background-color: aquamarine; */
 }
@@ -95,11 +96,10 @@ body {
     background-color: rgb(255, 255, 255);
     filter: blur(10px);
 }
-
-
-
-
-
+a{
+    text-decoration: none;
+    color: black;
+}
 .top-restaurant {
     height: 28vw;
     width: 100%;
@@ -256,4 +256,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+/* Error page */
+.error-main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error-status{
+    /* background-color: antiquewhite; */
+    height: 65%;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    /* h1 */
+    /* img-error-status-img */
 }
