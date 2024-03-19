@@ -36,6 +36,9 @@ const RestaurantMenu = () => {
                 }
                 else if(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.length)
                 {
+                    const d = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")
+                    const e = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+                    console.log(d, e)
                     setRestaurantFood(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
                     // break;
                 }
@@ -63,7 +66,7 @@ const RestaurantMenu = () => {
                     <p>{restaurantInfo?.totalRatingsString}</p>
                 </div>
                     
-                {(console.log(restaurantInfo),console.log(restaurantOffers, "Offers"), console.log(restaurantFood, "Food"))}
+                {/*(console.log(restaurantInfo),console.log(restaurantOffers, "Offers"), console.log(restaurantFood, "Food"))*/}
             </div>
             <div className="restaurant-delivery-time">
                 <p>{restaurantInfo?.sla?.slaString} </p>
