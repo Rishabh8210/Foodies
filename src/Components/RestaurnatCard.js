@@ -16,9 +16,9 @@ const RestaurantCard = ({name, cloudinaryImageId, avgRating, sla, aggregatedDisc
                 }
             </div>
             <div className="restaurant-desc">
-                <h2>{name}</h2>
+                <h2>{name && name.length > 20 ? name.slice(0, 20) + "..." : name}</h2>
                 <h2>{avgRating} . {(sla != undefined && sla.slaString)}</h2>
-                <p>{(cuisines != undefined && cuisines.join(", "))}</p>
+                <p>{(cuisines && cuisines.length > 2) ? cuisines.slice(0, 2).join(", ")+"...": cuisines.join(", ")}</p>
                 <p>{areaName}</p>
             </div>
         </div>

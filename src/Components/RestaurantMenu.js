@@ -6,6 +6,7 @@ import { Swiggy_Restaurant_Menu_API } from "../../Constant.js"
 import ShimerRestaurantList from "./ShimerRestaurantList"
 import ErrorPage from "./ErrorPage.js"
 import FoodOffers from "./FoodOffers.js"
+import ItemList from "./ItemList.js"
 const RestaurantMenu = () => {
     const [restaurantMenu, setRestaurantMenu] = useState(null)
     const [restaurantInfo, setRestaurantInfo] = useState(null)
@@ -27,20 +28,17 @@ const RestaurantMenu = () => {
                 if(id == parseMenuData?.data?.cards[i]?.card?.card?.info?.id)
                 {
                     setRestaurantInfo(parseMenuData?.data?.cards[i]?.card?.card?.info);
-                    // break;
                 }
                 else if(parseMenuData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.offers)
                 {
                     setRestaurantOffers(parseMenuData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.offers);
-                    // break;
                 }
                 else if(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.length)
                 {
                     const d = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")
                     const e = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
                     console.log(d, e)
-                    setRestaurantFood(parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-                    // break;
+                    setRestaurantFood(d);
                 }
                 // console.log("Nii mila", parseMenuData?.data?.cards[i]?.card?.card?.info?.id)
             }
@@ -77,6 +75,13 @@ const RestaurantMenu = () => {
                 {
                     restaurantOffers.map((offer)=>{
                         return <FoodOffers key = {offer?.info?.offerIds[0]} {...offer}/>
+                    })
+                }
+            </div>
+            <div className="restaurant-food-menu">
+                {
+                    restaurantFood.map((restaurant) => {
+                        return <ItemList {...restaurant?.card?.card} key = {restaurant?.card?.card?.title}/>
                     })
                 }
             </div>

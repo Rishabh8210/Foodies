@@ -162,19 +162,25 @@ a{
 }
 
 .restaurant-offers {
-    height: 40px;
+    height: 100%;
     border-bottom-left-radius: 1.3vw;
     border-bottom-right-radius: 1.3vw;
 
     width: 100%;
     position: absolute;
     bottom: 0;
-    font-size: 18px;
-    padding-left: 1vw;
+    font-size: 1.2vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1vw;
     color: white;
     font-weight: bolder;
     /* Linear gradient */
-    background-color: rgba(0, 0, 0, 0.637);
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 16%, rgba(0,0,0,1) 95%);
+
+        
 }
 
 .restaurant-desc {
@@ -358,7 +364,7 @@ a{
     gap: 2.4vw;
 }
 .restaurant-delivery-time p{
-    font-size: 1.2vw;
+    font-size: 1.4vw;
     font-weight: 900;
 }
 
@@ -394,5 +400,76 @@ a{
     scale:0.96;
 }
 .restaurant-food-offers-list h3{
-    font-size: 1.6vw;
+    font-size: 1.4vw;
+}
+.restaurant-food-offers-list p{
+    font-weight: 500;
+}
+
+.restaurant-food-menu{
+    min-height: 20vw;
+    width: 70%;
+    padding: 2vw 0vw;
+    /* background-color: blanchedalmond; */
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.food-menu-category{
+    height: 3vw;
+    width: 100%;
+    font-size: 1.3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 1.5vw;
+    background-color: rgba(191, 189, 189, 0.163);
+    cursor: pointer;
+}
+.food-categories-list{
+    padding: 0vw 1vw;
+    height: 8vw;
+    /* border: 1px solid red; */
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(115, 115, 115);
+}
+.food-desc{
+    display: flex;
+    /* gap: .2vw; */
+    font-size: 1.1vw;
+    flex-direction: column;
+    overflow: hidden;
+    width: 70%;
+}
+
+.food-add-to-cart{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 20%;
+    flex-direction: column;
+}
+.food-add-to-cart img{
+    /* width: 100%; */
+    height: 70%;
+    border-radius: .71vw;
+    /* background-color: aqua; */
+}
+.food-add-to-cart button{
+    font-size: .89vw;
+    width: 5vw;
+    height: 2vw;
+    position: absolute;
+    bottom: 13;
+    background-color: white;
+    border:1.5px solid rgba(88, 87, 87, 0.517);
+    border-radius: .4vw;
+    font-weight: 700;
+    color:red;
+    cursor: pointer;
 }
