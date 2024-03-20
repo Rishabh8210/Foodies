@@ -37,7 +37,6 @@ const RestaurantMenu = () => {
                 {
                     const d = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory")
                     const e = parseMenuData?.data?.cards[i]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(c => c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-                    console.log(d, e)
                     setRestaurantFood(d);
                 }
                 // console.log("Nii mila", parseMenuData?.data?.cards[i]?.card?.card?.info?.id)
