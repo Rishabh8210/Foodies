@@ -12,7 +12,7 @@ const ItemList = ({title, categories}) => {
                 }
             </div>
             {
-                isShow && categories.map((category, index) => (
+                isShow && categories && categories.map((category, index) => (
                     category.itemCards.map((item) => {
                         return <ItemCard {...item} key={item?.card?.info?.id}/>
                     })
