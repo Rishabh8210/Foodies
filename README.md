@@ -17,3 +17,6 @@ $ cd Foodies
 $ npm install
 
 ```
+### Screenshots - Screen Recordings: 
+#### Homepage
+![image](https://github.com/Rishabh8210/Foodies/assets/92287287/140b8c50-ec28-4999-8ca1-e6e8f2eb1184)
